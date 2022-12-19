@@ -16,7 +16,7 @@
     padding: 0;
 }
 
-body {
+.site_entier {
     height: 100vh;
     background-color: var(--bg_color);
     font-family: 'Raleway', sans-serif;
@@ -32,13 +32,11 @@ header {
     display: flex;
     padding: 20px;
     background-color: rgb(225, 223, 223);
-    align-content: center;
+    align-content:center;
     justify-content: center;
+    gap: 15px;
 }
 
-#nav p {
-    margin-left: 15px;
-}
 
 #resa_Cont{
     text-align: center;
@@ -61,6 +59,7 @@ header {
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 50px;
+    border: none;
 }
 
 #fonction_Cont{
@@ -70,9 +69,9 @@ header {
 .fonction_Box{
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 500px;
     padding: 25px;
-    margin: 30px 0px;
+    margin: 30px 20px;
     border-radius: 20px;
     background-color: rgb(249, 246, 246);
     box-shadow: 5px 5px 30px grey;
@@ -82,6 +81,25 @@ header {
 }
 .fonction_Box i{
     margin-left: 10px;
+}
+
+.chiffre{
+    background-color: var(--primary_color);
+    color: white;
+    border: 1px solid grey;
+    padding: 4px 13px 8px 13px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    margin-left: -40px;
+}
+.icon{
+    font-size: 1.3em;
+    padding-left: 20px;
+}
+.icon_violet{
+    font-size: 1.3em;
+    color: var(--primary_color);
+    padding-left: 20px;
 }
 
 #restau_Cont{
@@ -107,8 +125,8 @@ header {
     background-color: rgb(175, 235, 213);
     color:  rgb(27, 144, 122);
     position: absolute;
-    margin-left: 60%;
-    margin-top: 25px;
+    right: 20px;
+    top: 20px;
     font-weight: bold;
 }
 
@@ -127,11 +145,11 @@ header {
 
 #full_heart{
     position: absolute;
-    margin-left: 490px;
+    right: 30px;
     color: red;
     font-size: 1.8em;
-    opacity: 1;
-    z-index: 2;
+    opacity: 0.5;
+
 }
 #empty_heart:hover #full_heart{
     opacity: 1;
@@ -155,7 +173,7 @@ header {
     box-shadow: 5px 5px 30px grey;
     line-height: 27px;
     margin: 30px 0px 40px 0px;
-
+    position: relative;
 }
 
 .photo_restau{
@@ -247,12 +265,25 @@ footer h3{
 }
 
 .menu_Box{
+    width: 400px;
     padding: 15px;
     box-shadow: 5px 5px 20px grey;
     border-radius: 25px;
     line-height: 25px;
+    white-space: nowrap;
+
+}
+.menu_Box:hover{
+    padding-right: 300px;
+    transition: all 500ms;
+    
 }
 
+.carre{
+    height:100px;
+    width: 50px;
+    background-color: green;
+}
 .menu_Text{
     display: flex;
     justify-content: space-between;
