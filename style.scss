@@ -21,6 +21,15 @@
     height: 100vh;
     background-color: var(--bg_color);
     font-family: 'Raleway', sans-serif;
+    h1{
+        font-size: 35px;
+    }
+    h2{
+        font-size: 24px;
+    }
+    h3{
+        font-size: 17px;
+    }
 }
 
 header {
@@ -31,14 +40,14 @@ header {
 
 .nav {
     display: flex;
-    padding: 20px;
+    padding: 20px 0px;
     background-color: rgb(225, 223, 223);
     align-content:center;
     justify-content: center;
     gap: 15px;
 }
 
-.resa_Cont{
+.resa__cont{
     text-align: center;
     background-color: rgb(249, 246, 246);
     h2{
@@ -60,12 +69,12 @@ header {
     }
 }
 
-.fonction_Cont{
+.fonction{
     margin: 40px 0px;
     padding: 0px 30px;
 }
 
-.fonction_Box{
+.fonction__box{
     display: flex;
     align-items: center;
     width: 100%;
@@ -86,32 +95,64 @@ header {
     background-color: var(--primary_color);
     color: white;
     border: 1px solid grey;
-    padding: 4px 13px 8px 13px;
+    padding: 2px 11px 6px 11px;
     border-radius: 50%;
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-left: -40px;
 }
 .icon{
     font-size: 1.3em;
     padding-left: 20px;
 }
+.cursor{
+    font-size: 1.3em;
+}
+
 .icon_violet{
     font-size: 1.3em;
     color: var(--primary_color);
     padding-left: 20px;
 }
 
-.restau_Cont{
+.restau{
     background-color: rgb(249, 246, 246);
     margin-top: 50px;
-    height: 1380px;
     width: 100%;
-    padding: 0px 20px;
+    padding: 0px 30px 10px 30px;
     h2{
         margin-left: 20px;
         margin-bottom: 20px;
         padding-top: 40px;
     }
+}
+
+.restau__text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+.restau__box{ 
+    width: 100%;
+    height: 280px;
+    border-radius: 20px;
+    background-color: rgb(249, 246, 246);
+    box-shadow: 5px 5px 30px grey;
+    line-height: 27px;
+    margin: 30px 0px 40px 0px;
+    position: relative;
+    a{
+        text-decoration: none;
+        list-style-type: none;
+        color: inherit;
+    }
+}
+
+.restau__photo{
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+    height: 75%;
+    object-fit: cover;
 }
 
 .nouveau{
@@ -154,34 +195,7 @@ header {
 
 }
 
-.text_Box{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 20px;
-}
-.restau_Box{ 
-    width: 100%;
-    height: 280px;
-    border-radius: 20px;
-    background-color: rgb(249, 246, 246);
-    box-shadow: 5px 5px 30px grey;
-    line-height: 27px;
-    margin: 30px 0px 40px 0px;
-    position: relative;
-    a{
-        text-decoration: none;
-        list-style-type: none;
-        color: inherit;
-    }
-}
 
-.photo_restau{
-    width: 100%;
-    border-radius: 20px 20px 0px 0px;
-    height: 75%;
-    object-fit: cover;
-}
 
 footer{
     background-color: rgb(72, 70, 70);
@@ -194,10 +208,10 @@ footer{
     }
 }
 
-.foot_Cont{
+.foot__cont{
     margin-left: 30px;
 }
-.foot_Box{
+.foot__box{
     display: flex;
     align-items: center;
 }
@@ -305,4 +319,40 @@ footer{
     color: white;
     width: 220px;
     text-align: center;
+}
+
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 900px) {
+    
+    .fonction__cont{
+        display: flex;
+        justify-content: space-between;
+    }
+    .fonction__box{
+        width: 30%;
+    }
+    
+    .restau{
+        background-color: rgb(249, 246, 246);
+        margin-top: 50px;
+        width: 100%;
+        padding: 0px 10px 30px 10px;
+        h2{
+            margin-bottom: 10px;
+        }
+    }
+    .restau__cont{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .restau__box{ 
+        width: 46%;
+        margin: 25px 0px;
+    }
+
 }
