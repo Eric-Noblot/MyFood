@@ -1,305 +1,311 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 :root {
-    --primary_color: #9356DC;
-    --secondary_color: #FF79DA;
-    --tertiary_color: #99E2D0;
-    --hover_blue: #DEEBFF;
-    --booki_radius: 20px;
-    --shadow_hover: 5px 5px 30px rgb(88, 83, 83);
+  --primary_color: #9356DC;
+  --secondary_color: #FF79DA;
+  --tertiary_color: #99E2D0;
+  --booki_radius: 20px;
+  --shadow_hover: 5px 5px 30px rgb(88, 83, 83);
+  --bg_color: white;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .site_entier {
-    height: 100vh;
-    background-color: var(--bg_color);
-    font-family: 'Raleway', sans-serif;
+  height: 100vh;
+  background-color: var(--bg_color);
+  font-family: "Raleway", sans-serif;
 }
 
 header {
-    text-align: center;
-    padding: 10px;
-    font-family: 'Shrikhand';
-    }
-
-#nav {
-    display: flex;
-    padding: 20px;
-    background-color: rgb(225, 223, 223);
-    align-content:center;
-    justify-content: center;
-    gap: 15px;
+  text-align: center;
+  padding: 10px;
+  font-family: "Shrikhand";
 }
 
-
-#resa_Cont{
-    text-align: center;
-    background-color: rgb(249, 246, 246);
-}
-#resa_Cont h2{
-    padding: 35px 80px 0px 80px;
-
-}
-#resa_Cont p{
-    padding: 20px 60px;
+.nav {
+  display: flex;
+  padding: 20px;
+  background-color: rgb(225, 223, 223);
+  align-content: center;
+  justify-content: center;
+  gap: 15px;
 }
 
-#resa_Cont button{
-    padding: 20px;
-    width: 230px;
-    border-radius: 45px;
-    background: linear-gradient(340deg, var(--primary_color), var(--secondary_color));
-    color: white;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    border: none;
+.resa_Cont {
+  text-align: center;
+  background-color: rgb(249, 246, 246);
+}
+.resa_Cont h2 {
+  padding: 35px 80px 0px 80px;
+}
+.resa_Cont p {
+  padding: 20px 60px;
+}
+.resa_Cont button {
+  padding: 20px;
+  width: 230px;
+  border-radius: 45px;
+  background: linear-gradient(340deg, var(--primary_color), var(--secondary_color));
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  border: none;
 }
 
-#fonction_Cont{
-    margin: 40px 20px;
+.fonction_Cont {
+  margin: 40px 0px;
+  padding: 0px 30px;
 }
 
-.fonction_Box{
-    display: flex;
-    align-items: center;
-    width: 500px;
-    padding: 25px;
-    margin: 30px 20px;
-    border-radius: 20px;
-    background-color: rgb(249, 246, 246);
-    box-shadow: 5px 5px 30px grey;
+.fonction_Box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 25px;
+  margin-top: 30px;
+  border-radius: 20px;
+  background-color: rgb(249, 246, 246);
+  box-shadow: 5px 5px 30px grey;
 }
-.fonction_Box h3{
-    margin-left: 30px;
+.fonction_Box h3 {
+  margin-left: 30px;
 }
-.fonction_Box i{
-    margin-left: 10px;
-}
-
-.chiffre{
-    background-color: var(--primary_color);
-    color: white;
-    border: 1px solid grey;
-    padding: 4px 13px 8px 13px;
-    border-radius: 50%;
-    font-size: 1.2em;
-    margin-left: -40px;
-}
-.icon{
-    font-size: 1.3em;
-    padding-left: 20px;
-}
-.icon_violet{
-    font-size: 1.3em;
-    color: var(--primary_color);
-    padding-left: 20px;
+.fonction_Box i {
+  margin-left: 10px;
 }
 
-#restau_Cont{
-    background-color: rgb(249, 246, 246);
-    margin-top: 50px;
-    height: 1380px;
-    width: 100%;
-    padding: 0px 20px;
-  
-}
-#restau_Cont h2{
-    margin-left: 20px;
-    margin-bottom: 20px;
-    padding-top: 40px;
+.chiffre {
+  background-color: var(--primary_color);
+  color: white;
+  border: 1px solid grey;
+  padding: 4px 13px 8px 13px;
+  border-radius: 50%;
+  font-size: 1.2em;
+  margin-left: -40px;
 }
 
-.nouveau{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 120px;
-    background-color: rgb(175, 235, 213);
-    color:  rgb(27, 144, 122);
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-weight: bold;
+.icon {
+  font-size: 1.3em;
+  padding-left: 20px;
 }
 
-#empty_heart{
-    color: grey;
-    font-size: 1.8em;
-    margin-right: 10px;
-    transition: all 1000ms;
-    z-index: 2;
-    opacity: 1;
-}
-#empty_heart:hover{
-    opacity: 0;
+.icon_violet {
+  font-size: 1.3em;
+  color: var(--primary_color);
+  padding-left: 20px;
 }
 
-
-#full_heart{
-    position: absolute;
-    right: 30px;
-    color: red;
-    font-size: 1.8em;
-    opacity: 0.5;
-
+.restau_Cont {
+  background-color: rgb(249, 246, 246);
+  margin-top: 50px;
+  height: 1380px;
+  width: 100%;
+  padding: 0px 20px;
 }
-#empty_heart:hover #full_heart{
-    opacity: 1;
-
-}
-#full_heart:hover{
-
-
-}
-.text_Box{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 20px;
-}
-.restau_Box{ 
-    width: 100%;
-    height: 280px;
-    border-radius: 20px;
-    background-color: rgb(249, 246, 246);
-    box-shadow: 5px 5px 30px grey;
-    line-height: 27px;
-    margin: 30px 0px 40px 0px;
-    position: relative;
+.restau_Cont h2 {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding-top: 40px;
 }
 
-.photo_restau{
-    width: 100%;
-    border-radius: 20px 20px 0px 0px;
-    height: 75%;
-    object-fit: cover;
+.nouveau {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 120px;
+  background-color: rgb(175, 235, 213);
+  color: rgb(27, 144, 122);
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-weight: bold;
 }
 
-footer{
-    background-color: rgb(72, 70, 70);
-    color: white;
-    height: 205px;
-    line-height: 30px;
-
-}
-footer h3{
-    font-family: Shrikhand;
-    padding: 22px 0px 15px 0px;
-}
-#foot_Cont{
-    margin-left: 30px;
-}
-.foot_Box{
-    display: flex;
-    align-items: center;
-}
-#foot_Icon1{
-    margin-right: 21px;
-}
-#foot_Icon2{
-    margin-right: 15px;
+#empty_heart {
+  color: grey;
+  font-size: 1.8em;
+  margin-right: 10px;
+  transition: all 1000ms;
+  z-index: 2;
+  opacity: 1;
 }
 
+#empty_heart:hover {
+  opacity: 0;
+}
+
+#full_heart {
+  position: absolute;
+  right: 30px;
+  color: red;
+  font-size: 1.8em;
+  opacity: 0.5;
+}
+
+#empty_heart:hover #full_heart {
+  opacity: 1;
+}
+
+.text_Box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.restau_Box {
+  width: 100%;
+  height: 280px;
+  border-radius: 20px;
+  background-color: rgb(249, 246, 246);
+  box-shadow: 5px 5px 30px grey;
+  line-height: 27px;
+  margin: 30px 0px 40px 0px;
+  position: relative;
+}
+.restau_Box a {
+  text-decoration: none;
+  list-style-type: none;
+  color: inherit;
+}
+
+.photo_restau {
+  width: 100%;
+  border-radius: 20px 20px 0px 0px;
+  height: 75%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+footer {
+  background-color: rgb(72, 70, 70);
+  color: white;
+  height: 205px;
+  line-height: 30px;
+}
+footer h3 {
+  font-family: Shrikhand;
+  padding: 22px 0px 15px 0px;
+}
+
+.foot_Cont {
+  margin-left: 30px;
+}
+
+.foot_Box {
+  display: flex;
+  align-items: center;
+}
+
+#foot_Icon1 {
+  margin-right: 21px;
+}
+
+#foot_Icon2 {
+  margin-right: 15px;
+}
 
 /* MENU CSS */
-
-
-#header_Cont{
-    display: flex;
-    align-items: center;
+.header_Cont {
+  display: flex;
+  align-items: center;
 }
-#header_Cont h1{
-    margin: auto;
+.header_Cont h1 {
+  margin: auto;
 }
-#fleche{
-    margin-left: 15px;
-    font-size: 1.5em;
+.header_Cont a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.photo_Box{
-    height: 300px;
-    width: 100%;
-
-}
-.photo_menu{
-    height: 100%;
-    width: 100%;
-    object-fit:cover;
-    object-position: center;
+#fleche {
+  margin-left: 15px;
+  font-size: 1.5em;
 }
 
-.menu_titre{
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 0px;
-}
-.menu_titre h1{
-    font-family: 'Shrikhand';
+.photo_Box {
+  height: 300px;
+  width: 100%;
 }
 
-#menu_carte{
-    padding: 20px;
+.photo_menu {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
-.menu_Cont{
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin-bottom: 40px;
+.menu_titre {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0px;
+}
+.menu_titre h1 {
+  font-family: "Shrikhand";
 }
 
-.menu_Cont h2{
-    border-bottom: 4px solid;
-    border-color: var(--tertiary_color);
-    padding-bottom: 5px;
-    width: 60px;
-
+.menu_carte {
+  padding: 20px;
 }
 
-.menu_Box{
-    width: 400px;
-    padding: 15px;
-    box-shadow: 5px 5px 20px grey;
-    border-radius: 25px;
-    line-height: 25px;
-    white-space: nowrap;
-
+.menu_Cont {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
 }
-.menu_Box:hover{
-    padding-right: 300px;
-    transition: all 500ms;
-    
+.menu_Cont h2 {
+  border-bottom: 4px solid;
+  border-color: var(--tertiary_color);
+  padding-bottom: 5px;
+  width: 60px;
 }
 
-.carre{
-    height:100px;
-    width: 50px;
-    background-color: green;
-}
-.menu_Text{
-    display: flex;
-    justify-content: space-between;
-
+.menu_Box {
+  width: 400px;
+  padding: 15px;
+  box-shadow: 5px 5px 20px grey;
+  border-radius: 25px;
+  line-height: 25px;
+  white-space: nowrap;
 }
 
-.commander_Box{
-    text-align: center;
-    margin-bottom: 20px;
+.menu_Box:hover {
+  padding-right: 300px;
+  transition: all 500ms;
 }
-.commander{
-    padding: 20px;
-    border-radius: 30px;
-    border: none;
-    background: linear-gradient(to bottom, var(--primary_color), var(--secondary_color));
-    color: white;
-    width: 220px;
-    text-align: center;
+
+.carre {
+  height: 100px;
+  width: 50px;
+  background-color: green;
 }
+
+.menu_Text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.commander_Box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.commander {
+  padding: 20px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(to bottom, var(--primary_color), var(--secondary_color));
+  color: white;
+  width: 220px;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
