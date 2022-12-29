@@ -99,7 +99,7 @@ header {
   margin-left: -40px;
 }
 
-.icon {
+.fonction__icon {
   font-size: 1.3em;
   padding-left: 20px;
 }
@@ -108,7 +108,7 @@ header {
   font-size: 1.3em;
 }
 
-.icon_violet {
+.fonction__icon__purple {
   font-size: 1.3em;
   color: var(--primary_color);
   padding-left: 20px;
@@ -216,23 +216,23 @@ footer h3 {
   align-items: center;
 }
 
-#foot_Icon1 {
+#foot__icon1 {
   margin-right: 21px;
 }
 
-#foot_Icon2 {
+#foot__icon2 {
   margin-right: 15px;
 }
 
 /* MENU CSS */
-.header_Cont {
+.header__cont {
   display: flex;
   align-items: center;
 }
-.header_Cont h1 {
+.header__cont h1 {
   margin: auto;
 }
-.header_Cont a {
+.header__cont a {
   text-decoration: none;
   color: inherit;
 }
@@ -256,63 +256,99 @@ footer h3 {
      object-position: center;
 }
 
-.menu_titre {
+.menu__title {
   display: flex;
   justify-content: space-between;
   padding: 30px 0px;
 }
-.menu_titre h1 {
+.menu__title h1 {
   font-family: "Shrikhand";
 }
 
-.menu_carte {
+.menu {
   padding: 20px;
 }
 
-.menu_Cont {
+.menu__cont {
   display: flex;
   flex-direction: column;
   gap: 25px;
   margin-bottom: 40px;
 }
-.menu_Cont h2 {
+.menu__cont h2 {
   border-bottom: 4px solid;
   border-color: var(--tertiary_color);
   padding-bottom: 5px;
   width: 60px;
 }
 
-.menu_Box {
+.menu__box {
+  display: flex;
+  align-items: center;
   width: 400px;
-  padding: 15px;
+  height: 80px;
   box-shadow: 5px 5px 20px grey;
   border-radius: 25px;
   line-height: 25px;
-  white-space: nowrap;
+  overflow: hidden;
+}
+.menu__box:hover .carre {
+  margin-right: 0px;
+  transition: all 700ms;
+}
+.menu__box:hover .carre .carre__icon {
+  transform: rotate(360deg);
 }
 
-.menu_Box:hover {
-  padding-right: 300px;
-  transition: all 500ms;
+.menu__text {
+  margin-left: 20px;
+  padding-right: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.menu__text p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.prix {
+  margin-left: auto;
+  margin-top: 25px;
+  padding-right: 50px;
 }
 
 .carre {
-  height: 100px;
-  width: 50px;
-  background-color: green;
-}
-
-.menu_Text {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms;
+  width: 100px;
+  height: 100%;
+  background-color: var(--tertiary_color);
+  border-radius: 0px 25px 25px 0px;
+  margin-right: -100px;
 }
 
-.commander_Box {
+.carre__icon {
+  transition: all 700ms;
+}
+
+.check_icon {
+  padding: 5px;
+  border-radius: 50%;
+  color: var(--tertiary_color);
+  font-size: 1.2em;
+  background-color: white;
+}
+
+/*-----------------------------*/
+.commander {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.commander {
+.commander__button {
   padding: 20px;
   border-radius: 30px;
   border: none;
