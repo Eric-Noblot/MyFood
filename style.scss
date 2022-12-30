@@ -19,8 +19,11 @@
 
 .site_entier {
     height: 100vh;
+    max-width: 1440px;
     background-color: var(--bg_color);
     font-family: 'Raleway', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
     h1{
         font-size: 35px;
     }
@@ -243,9 +246,10 @@ footer{
     font-size: 1.5em;
 }
 
-.photo_Box{
+.photo__box{
     height: 300px;
     width: 100%;
+    z-index: 1;
 
 }
 .photo_menu{
@@ -253,11 +257,13 @@ footer{
     width: 100%;
     object-fit:cover;
     object-position: center;
+   
 }
 
 .menu__title{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     padding: 30px 0px;
     h1{
         font-family: 'Shrikhand';
@@ -266,6 +272,9 @@ footer{
 
 .menu{
     padding: 20px;
+    border-radius: 50px 50px 0px 0px;
+    z-index: 2;
+
 }
 
 .menu__cont{
@@ -280,11 +289,19 @@ footer{
         width: 60px;
     }
 }
+    
+.menu__total__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
 
 .menu__box{
     display: flex;
     align-items: center;
-    width: 400px;
+    width: 100%;
     height: 80px;
     box-shadow: 5px 5px 20px grey;
     border-radius: 25px;
@@ -304,17 +321,17 @@ footer{
     padding-right: 20px;
     white-space: nowrap;
     overflow: hidden;
-}
-.menu__text p{
-    text-overflow: ellipsis;
-    overflow: hidden;
+    p, h3{
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 }
 
 .prix{
     margin-left: auto;
     margin-top: 25px;
-    padding-right: 50px;
-
+    padding-right: 45px;
+    font-weight: bold;
 }
 
 .carre{
@@ -361,7 +378,7 @@ footer{
 
 /* MEDIA QUERIES */
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 850px) {
     
     .fonction__cont{
         display: flex;
@@ -388,6 +405,34 @@ footer{
     .restau__box{ 
         width: 46%;
         margin: 25px 0px;
+    }
+
+    /*------------------Menu*/
+
+    .menu__cont{
+        margin-bottom: 60px;
+    }
+
+    .menu__total__box{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .menu__box{
+        display: flex;
+        align-items: center;
+        width: 30%;
+
+        &:hover .carre{
+            margin-right: 0px;
+            transition: all 700ms;
+        }
+        &:hover .carre .carre__icon{
+            transform: rotate(360deg);
+        }
     }
 
 }
