@@ -178,7 +178,7 @@ header {
   color: grey;
   font-size: 1.8em;
   margin-right: 10px;
-  transition: all 1000ms;
+  transition: all 1200ms;
   z-index: 2;
   opacity: 1;
 }
@@ -190,12 +190,15 @@ header {
 #full_heart {
   position: absolute;
   right: 30px;
-  color: red;
+  /*background-color: linear-gradient(to bottom, var(--primary_color), var(--secondary_color));*/
+  color: purple;
   font-size: 1.8em;
-  opacity: 0.5;
+  z-index: 1;
+  opacity: 0;
+  transition: all 1200ms;
 }
 
-#empty_heart:hover #full_heart {
+#empty_heart:hover + #full_heart {
   opacity: 1;
 }
 
