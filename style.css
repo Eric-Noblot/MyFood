@@ -79,16 +79,26 @@ header {
 .resa__cont p {
   padding: 20px 60px;
 }
-.resa__cont button {
-  padding: 20px;
-  width: 230px;
-  border-radius: 45px;
-  background: linear-gradient(340deg, var(--primary_color), var(--secondary_color));
-  color: white;
-  font-weight: bold;
+.resa__cont .resa__button {
+  border-radius: 40px;
   margin-top: 20px;
   margin-bottom: 50px;
+}
+
+button {
+  width: 230px;
+  padding: 20px;
+  border-radius: 30px;
   border: none;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(330deg, var(--primary_color), var(--secondary_color));
+  box-shadow: 5px 5px 10px rgb(128, 128, 128);
+  opacity: 1;
+}
+button:hover {
+  opacity: 0.9;
 }
 
 .fonction {
@@ -414,16 +424,6 @@ footer h3 {
 .commander {
   text-align: center;
   margin-bottom: 20px;
-}
-
-.commander__button {
-  padding: 20px;
-  border-radius: 30px;
-  border: none;
-  background: linear-gradient(to bottom, var(--primary_color), var(--secondary_color));
-  color: white;
-  width: 220px;
-  text-align: center;
 }
 
 /* MEDIA QUERIES */
