@@ -9,27 +9,68 @@
   --bg_color: white;
 }
 
-@-webkit-keyframes menu__translate {
-  from {
-    transform: translateY(10%);
-    opacity: 0.1;
+/* LOGO CHARGEMENT */
+.loader__cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.loader {
+  width: 100px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.loader__bar:nth-child(odd) {
+  width: 100%;
+  height: 6px;
+  -webkit-animation: bars 1000ms infinite;
+          animation: bars 1000ms infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  background-color: var(--primary_color);
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+  border-radius: 20px;
+}
+.loader__bar:nth-child(even) {
+  width: 100%;
+  height: 9px;
+  -webkit-animation: bars 1000ms infinite;
+          animation: bars 1000ms infinite;
+  animation-direction: alternate-reverse;
+  background-color: var(--secondary_color);
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+  border-radius: 20px;
+}
+
+@-webkit-keyframes bars {
+  0% {
+    transform: translateX(50%);
   }
-  to {
-    transform: translateY(0%);
-    opacity: 1;
+  100% {
+    transform: translateX(0);
   }
 }
 
-@keyframes menu__translate {
-  from {
-    transform: translateY(10%);
-    opacity: 0.1;
+@keyframes bars {
+  0% {
+    transform: translateX(50%);
   }
-  to {
-    transform: translateY(0%);
-    opacity: 1;
+  100% {
+    transform: translateX(0);
   }
 }
+/* ATTRIBUTS COMMUNS */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -60,6 +101,37 @@ header {
   font-family: "Shrikhand";
 }
 
+.footer {
+  background-color: rgb(72, 70, 70);
+  color: white;
+  height: 205px;
+  line-height: 30px;
+}
+.footer h3 {
+  font-family: Shrikhand;
+  padding: 22px 0px 15px 0px;
+}
+.footer__cont {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+.footer__cont a {
+  text-decoration: none;
+  color: white;
+}
+.footer__box {
+  display: flex;
+  align-items: center;
+}
+.footer__icon1 {
+  margin-right: 21px;
+}
+.footer__icon2 {
+  margin-right: 15px;
+}
+
+/* MENU PRINCIPAL / CHOIX DU RESTAURANT */
 .nav {
   display: flex;
   padding: 20px 0px;
@@ -105,7 +177,6 @@ button:hover {
   margin: 40px 0px;
   padding: 0px 30px;
 }
-
 .fonction__box {
   display: flex;
   align-items: center;
@@ -119,7 +190,15 @@ button:hover {
 .fonction__box h3 {
   margin-left: 30px;
 }
-.fonction__box i {
+.fonction__icon {
+  font-size: 1.3em;
+  padding-left: 20px;
+  margin-left: 10px;
+}
+.fonction__icon__purple {
+  font-size: 1.3em;
+  color: var(--primary_color);
+  padding-left: 20px;
   margin-left: 10px;
 }
 
@@ -133,19 +212,8 @@ button:hover {
   margin-left: -40px;
 }
 
-.fonction__icon {
-  font-size: 1.3em;
-  padding-left: 20px;
-}
-
 .cursor {
   font-size: 1.3em;
-}
-
-.fonction__icon__purple {
-  font-size: 1.3em;
-  color: var(--primary_color);
-  padding-left: 20px;
 }
 
 .restau {
@@ -159,14 +227,12 @@ button:hover {
   margin-bottom: 20px;
   padding-top: 40px;
 }
-
 .restau__text {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
 }
-
 .restau__box {
   width: 100%;
   height: 280px;
@@ -182,7 +248,6 @@ button:hover {
   list-style-type: none;
   color: inherit;
 }
-
 .restau__photo {
   width: 100%;
   border-radius: 20px 20px 0px 0px;
@@ -234,41 +299,7 @@ button:hover {
   transition: all 2000ms;
 }
 
-footer {
-  background-color: rgb(72, 70, 70);
-  color: white;
-  height: 205px;
-  line-height: 30px;
-}
-footer h3 {
-  font-family: Shrikhand;
-  padding: 22px 0px 15px 0px;
-}
-
-.foot__cont {
-  display: flex;
-  flex-direction: column;
-  margin-left: 30px;
-}
-.foot__cont a {
-  text-decoration: none;
-  color: white;
-}
-
-.foot__box {
-  display: flex;
-  align-items: center;
-}
-
-#foot__icon1 {
-  margin-right: 21px;
-}
-
-#foot__icon2 {
-  margin-right: 15px;
-}
-
-/* MENU CSS */
+/* MENUS RESTAURANTS*/
 .header__cont {
   display: flex;
   align-items: center;
@@ -292,7 +323,7 @@ footer h3 {
   z-index: 1;
 }
 
-.photo_menu {
+.photo__menu {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -301,22 +332,42 @@ footer h3 {
      object-position: center;
 }
 
+@-webkit-keyframes menu__translate {
+  from {
+    transform: translateY(10%);
+    opacity: 0.1;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes menu__translate {
+  from {
+    transform: translateY(10%);
+    opacity: 0.1;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.menu {
+  padding: 20px;
+  border-radius: 50px 50px 0px 0px;
+  z-index: 2;
+}
 .menu__title {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
+  max-width: 1440px;
   align-items: center;
   padding: 30px 0px;
 }
 .menu__title h1 {
   font-family: "Shrikhand";
 }
-
-.menu {
-  padding: 20px;
-  border-radius: 50px 50px 0px 0px;
-  z-index: 2;
-}
-
 .menu__cont {
   display: flex;
   flex-direction: column;
@@ -329,7 +380,6 @@ footer h3 {
   padding-bottom: 5px;
   width: 60px;
 }
-
 .menu__total__box {
   display: flex;
   flex-direction: column;
@@ -341,22 +391,6 @@ footer h3 {
   -webkit-animation-duration: 1.5s;
           animation-duration: 1.5s;
 }
-
-.box1 {
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
-}
-
-.box2 {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
-}
-
-.box3 {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-}
-
 .menu__box {
   display: flex;
   align-items: center;
@@ -376,7 +410,6 @@ footer h3 {
 .menu__box:hover .menu__carre .carre__icon {
   transform: rotate(360deg);
 }
-
 .menu__text {
   margin-left: 20px;
   padding-right: 20px;
@@ -387,7 +420,6 @@ footer h3 {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-
 .menu__prix {
   margin-left: auto;
   margin-top: 25px;
@@ -395,7 +427,6 @@ footer h3 {
   padding-left: 10px;
   font-weight: bold;
 }
-
 .menu__carre {
   display: flex;
   justify-content: center;
@@ -408,11 +439,26 @@ footer h3 {
   margin-right: -30px;
 }
 
+.box1 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.box2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.box3 {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
 .carre__icon {
   transition: all 700ms;
 }
 
-.check_icon {
+.check__icon {
   padding: 5px;
   border-radius: 50%;
   color: var(--tertiary_color);
@@ -420,7 +466,6 @@ footer h3 {
   background-color: white;
 }
 
-/*-----------------------------*/
 .commander {
   text-align: center;
   margin-bottom: 20px;
@@ -428,6 +473,7 @@ footer h3 {
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 850px) {
+  /* MENU PRINCIPAL / CHOIX DU RESTAURANT */
   .fonction__cont {
     display: flex;
     justify-content: space-between;
@@ -453,7 +499,7 @@ footer h3 {
     width: 46%;
     margin: 25px 0px;
   }
-  /*------------------Menu*/
+  /* MENUS RESTAURANTS*/
   .menu__cont {
     margin-bottom: 60px;
   }

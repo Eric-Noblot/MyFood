@@ -11,16 +11,55 @@
     --bg_color: white;
 }
 
-@keyframes menu__translate{
-    from {
-        transform: translateY(10%);
-        opacity: 0.1;
+    /* LOGO CHARGEMENT */
+
+.loader__cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+.loader {
+    width: 100px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    &__bar:nth-child(odd) {
+        width: 100%;
+        height: 6px;
+        animation: bars 1000ms infinite;
+        animation-direction: alternate;
+        background-color: var(--primary_color);
+        animation-delay: 300ms;
+        border-radius: 20px;
     }
-    to {
-        transform: translateY(0%);
-        opacity: 1;
+    &__bar:nth-child(even) {
+        width: 100%;
+        height: 9px;
+        animation: bars 1000ms infinite;
+        animation-direction: alternate-reverse;
+        background-color: var(--secondary_color);
+        animation-delay: 300ms;
+        border-radius: 20px;
     }
 }
+
+@keyframes bars {
+    0% {
+        transform: translateX(50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* ATTRIBUTS COMMUNS */
 
 * {
     box-sizing: border-box;
@@ -51,6 +90,38 @@ header {
     padding: 10px;
     font-family: 'Shrikhand';
     }
+
+.footer{
+    background-color: rgb(72, 70, 70);
+    color: white;
+    height: 205px;
+    line-height: 30px;
+    h3{
+        font-family: Shrikhand;
+        padding: 22px 0px 15px 0px;
+    }
+    &__cont{
+        display: flex;
+        flex-direction: column;
+        margin-left: 30px;
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+    &__box{
+        display: flex;
+        align-items: center;
+    }
+    &__icon1{
+        margin-right: 21px;
+    }
+    &__icon2{
+        margin-right: 15px;
+    }
+}
+
+ /* MENU PRINCIPAL / CHOIX DU RESTAURANT */
 
 .nav {
     display: flex;
@@ -96,21 +167,28 @@ button{
 .fonction{
     margin: 40px 0px;
     padding: 0px 30px;
-}
-
-.fonction__box{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 25px;
-    margin-top: 30px;
-    border-radius: 20px;
-    background-color: rgb(249, 246, 246);
-    box-shadow: 5px 5px 30px grey;
-    h3{
-        margin-left: 30px;
+    &__box{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 25px;
+        margin-top: 30px;
+        border-radius: 20px;
+        background-color: rgb(249, 246, 246);
+        box-shadow: 5px 5px 30px grey;
+        h3{
+            margin-left: 30px;
+        }
     }
-    i{
+    &__icon{
+        font-size: 1.3em;
+        padding-left: 20px;
+        margin-left: 10px;
+    }
+    &__icon__purple{
+        font-size: 1.3em;
+        color: var(--primary_color);
+        padding-left: 20px;
         margin-left: 10px;
     }
 }
@@ -124,18 +202,9 @@ button{
     font-size: 1.1em;
     margin-left: -40px;
 }
-.fonction__icon{
-    font-size: 1.3em;
-    padding-left: 20px;
-}
+
 .cursor{
     font-size: 1.3em;
-}
-
-.fonction__icon__purple{
-    font-size: 1.3em;
-    color: var(--primary_color);
-    padding-left: 20px;
 }
 
 .restau{
@@ -148,35 +217,33 @@ button{
         margin-bottom: 20px;
         padding-top: 40px;
     }
-}
-
-.restau__text{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 20px;
-}
-.restau__box{ 
-    width: 100%;
-    height: 280px;
-    border-radius: 20px;
-    background-color: rgb(249, 246, 246);
-    box-shadow: 5px 5px 30px grey;
-    line-height: 27px;
-    margin: 30px 0px 40px 0px;
-    position: relative;
-    a{
-        text-decoration: none;
-        list-style-type: none;
-        color: inherit;
+    &__text{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px;
     }
-}
-
-.restau__photo{
-    width: 100%;
-    border-radius: 20px 20px 0px 0px;
-    height: 75%;
-    object-fit: cover;
+    &__box{ 
+        width: 100%;
+        height: 280px;
+        border-radius: 20px;
+        background-color: rgb(249, 246, 246);
+        box-shadow: 5px 5px 30px grey;
+        line-height: 27px;
+        margin: 30px 0px 40px 0px;
+        position: relative;
+        a{
+            text-decoration: none;
+            list-style-type: none;
+            color: inherit;
+        }
+    }
+    &__photo{
+        width: 100%;
+        border-radius: 20px 20px 0px 0px;
+        height: 75%;
+        object-fit: cover;
+    }
 }
 
 .nouveau{
@@ -224,39 +291,7 @@ button{
 }
 
 
-footer{
-    background-color: rgb(72, 70, 70);
-    color: white;
-    height: 205px;
-    line-height: 30px;
-    h3{
-        font-family: Shrikhand;
-        padding: 22px 0px 15px 0px;
-    }
-}
-
-.foot__cont{
-    display: flex;
-    flex-direction: column;
-    margin-left: 30px;
-    a{
-        text-decoration: none;
-        color: white;
-    }
-}
-.foot__box{
-    display: flex;
-    align-items: center;
-}
-#foot__icon1{
-    margin-right: 21px;
-}
-#foot__icon2{
-    margin-right: 15px;
-}
-
-
-/* MENU CSS */
+/* MENUS RESTAURANTS*/
 
 
 .header__cont{
@@ -282,7 +317,7 @@ footer{
     z-index: 1;
 
 }
-.photo_menu{
+.photo__menu{
     height: 100%;
     width: 100%;
     object-fit:cover;
@@ -290,13 +325,14 @@ footer{
    
 }
 
-.menu__title{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 30px 0px;
-    h1{
-        font-family: 'Shrikhand';
+@keyframes menu__translate{
+    from {
+        transform: translateY(10%);
+        opacity: 0.1;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
     }
 }
 
@@ -304,30 +340,84 @@ footer{
     padding: 20px;
     border-radius: 50px 50px 0px 0px;
     z-index: 2;
-
-}
-
-.menu__cont{
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin-bottom: 40px;
-    h2{
-        border-bottom: 4px solid;
-        border-color: var(--tertiary_color);
-        padding-bottom: 5px;
-        width: 60px;
+    &__title{
+        display: flex;
+        justify-content: flex-end;
+        max-width: 1440px;
+        align-items: center;
+        padding: 30px 0px;
+        h1{
+            font-family: 'Shrikhand';
+        }
     }
-}
-    
-.menu__total__box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    animation: menu__translate;
-    animation-duration: 1.5s;
+    &__cont{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 40px;
+        h2{
+            border-bottom: 4px solid;
+            border-color: var(--tertiary_color);
+            padding-bottom: 5px;
+            width: 60px;
+        }
+    }
+    &__total__box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        animation: menu__translate;
+        animation-duration: 1.5s;
+    } 
+    &__box{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 80px;
+        box-shadow: 5px 5px 20px grey;
+        border-radius: 25px;
+        line-height: 25px;
+        overflow: hidden;
+        transform: rotate(360deg);
+        &:hover .menu__carre{
+            margin-right: 0px;
+            min-width: 100px;
+            transition: all 700ms;
+            .carre__icon{
+                transform: rotate(360deg);
+            }
+        }
+    }
+    &__text{
+        margin-left: 20px;
+        padding-right: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        p, h3{
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+    &__prix{
+        margin-left: auto;
+        margin-top: 25px;
+        padding-right: 45px;
+        padding-left: 10px;
+        font-weight: bold;
+    }
+    &__carre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 500ms;
+        min-width: 0px;
+        height: 100%;
+        background-color: var(--tertiary_color);
+        border-radius: 0px 25px 25px 0px;
+        margin-right: -30px;
+    }
 }
 
 .box1{
@@ -340,69 +430,16 @@ footer{
     animation-delay: 0.5s;
 }
 
-.menu__box{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 80px;
-    box-shadow: 5px 5px 20px grey;
-    border-radius: 25px;
-    line-height: 25px;
-    overflow: hidden;
-    transform: rotate(360deg);
-    &:hover .menu__carre{
-        margin-right: 0px;
-        min-width: 100px;
-        transition: all 700ms;
-        .carre__icon{
-            transform: rotate(360deg);
-        }
-    }
-}
-
-.menu__text{
-    margin-left: 20px;
-    padding-right: 20px;
-    white-space: nowrap;
-    overflow: hidden;
-    p, h3{
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
-}
-
-.menu__prix{
-    margin-left: auto;
-    margin-top: 25px;
-    padding-right: 45px;
-    padding-left: 10px;
-    font-weight: bold;
-}
-
-.menu__carre{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 500ms;
-    min-width: 0px;
-    height: 100%;
-    background-color: var(--tertiary_color);
-    border-radius: 0px 25px 25px 0px;
-    margin-right: -30px;
-}
-
 .carre__icon{
     transition: all 700ms;
 }
-.check_icon{
+.check__icon{
     padding: 5px;
     border-radius: 50%;
     color: var(--tertiary_color);
     font-size: 1.2em;
     background-color: white;
 }
- /*-----------------------------*/
-
 
 .commander{
     text-align: center;
@@ -414,6 +451,8 @@ footer{
 
 @media screen and (min-width: 850px) {
     
+     /* MENU PRINCIPAL / CHOIX DU RESTAURANT */
+
     .fonction__cont{
         display: flex;
         justify-content: space-between;
@@ -430,18 +469,19 @@ footer{
         h2{
             margin-bottom: 10px;
         }
-    }
-    .restau__cont{
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-    .restau__box{ 
-        width: 46%;
-        margin: 25px 0px;
+        &__cont{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        &__box{ 
+            width: 46%;
+            margin: 25px 0px;
+        }
     }
 
-    /*------------------Menu*/
+/* MENUS RESTAURANTS*/
+
 
     .menu__cont{
         margin-bottom: 60px;
@@ -450,7 +490,6 @@ footer{
     .menu__total__box{
         flex-direction: row;
         justify-content: space-evenly;
-
     }
 
     .menu__box{

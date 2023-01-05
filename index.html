@@ -10,13 +10,22 @@
 
 <body>  
     <div class="site_entier">
+
+        <div class="loader__cont">
+            <div class="loader">
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+            </div>
+         </div>
+
         <header>    
             <h1>ohmyfood</h1>
         </header>
-        <div class="container">
-            <div class="progress">
-                <div class="progress__bar"></div>
-            </div>
+
         <div class="nav">
             <i class="fa-solid fa-location-dot cursor"></i>
             <p>Paris, Belleville</p>
@@ -54,16 +63,16 @@
             <div class="restau__cont">
                 <div class="restau__box">
                     <a href="menu1.html">
-                    <div class="nouveau">Nouveau</div>
-                    <img src="images/restaurant/restau1.jpg" alt="restau1" class="restau__photo">
-                    <div class="restau__text">
-                        <div>
-                            <h3>La palette du goût</h3>
-                            <p>Ménilmontant</p>
-                        </div class="heart__box">
-                        <i class="fa-regular fa-heart  heart empty"></i>
-                        <i class="fa-solid fa-heart heart fill"></i>
-                    </div>
+                        <div class="nouveau">Nouveau</div>
+                        <img src="images/restaurant/restau1.jpg" alt="restau1" class="restau__photo">
+                        <div class="restau__text">
+                            <div>
+                                <h3>La palette du goût</h3>
+                                <p>Ménilmontant</p>
+                            </div>
+                            <i class="fa-regular fa-heart  heart empty"></i>
+                            <i class="fa-solid fa-heart heart fill"></i>
+                        </div>
                     </a>
                 </div>
                 <div class="restau__box">
@@ -74,7 +83,7 @@
                         <div>
                             <h3>La note enchantée</h3>
                             <p>Charonne</p>
-                        </div class="heart__box">
+                        </div>
                         <i class="fa-regular fa-heart  heart empty"></i>
                         <i class="fa-solid fa-heart heart fill"></i>
                     </div>
@@ -87,7 +96,7 @@
                         <div>
                             <h3>À la française</h3>
                             <p>Cité Rouge</p>
-                        </div class="heart__box">
+                        </div>
                         <i class="fa-regular fa-heart  heart empty"></i>
                         <i class="fa-solid fa-heart heart fill"></i>
                     </div>
@@ -100,7 +109,7 @@
                         <div>
                             <h3>Le délice des sens</h3>
                             <p>Folie-Méricourt</p>
-                        </div class="heart__box">
+                        </div>
                         <i class="fa-regular fa-heart  heart empty"></i>
                         <i class="fa-solid fa-heart heart fill"></i>
                     </div>
@@ -109,16 +118,15 @@
             </div>
         </section>
 
-        </div>
-        <footer>
-            <div class="foot__cont">
+        <footer class="footer">
+            <div class="footer__cont">
                 <h3>oh my food</h3>
-                <div class="foot__box">
-                    <i class="fa-solid fa-utensils" id="foot__icon1"></i>
+                <div class="footer__box">
+                    <i class="fa-solid fa-utensils footer__icon1"></i>
                     <a href="#">Proposer un restaurant</a>
                 </div>
-                <div class="foot__box">
-                    <i class="fa-solid fa-handshake" id="foot__icon2"></i>
+                <div class="footer__box">
+                    <i class="fa-solid fa-handshake footer__icon2"></i>
                     <a href="#">Devenir partenaire</a>
                 </div>
                 <a href="#">Mentions légales</a>
