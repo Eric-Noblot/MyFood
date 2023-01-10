@@ -14,12 +14,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   opacity: 1;
+  z-index: 3;
+  pointer-events: none;
 }
 
 .loader {
@@ -89,16 +91,28 @@
   font-size: 35px;
 }
 .site_entier h2 {
-  font-size: 24px;
+  /*font-size: 24px;*/
+  font-size: 26px;
 }
 .site_entier h3 {
+  font-size: 24px;
+}
+.site_entier h4 {
   font-size: 17px;
+  font-weight: bold;
+}
+.site_entier p {
+  font-size: 17px;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 header {
   text-align: center;
   padding: 10px;
-  font-family: "Shrikhand";
+  font-family: "Shrikhand", sans-serif;
 }
 
 .footer {
@@ -171,6 +185,7 @@ button {
 }
 button:hover {
   opacity: 0.9;
+  box-shadow: 5px 5px 15px rgb(46, 46, 46);
 }
 
 .fonction {
@@ -187,8 +202,10 @@ button:hover {
   background-color: rgb(249, 246, 246);
   box-shadow: 5px 5px 30px grey;
 }
-.fonction__box h3 {
+.fonction__box p {
   margin-left: 30px;
+  font-size: 17px;
+  font-weight: bold;
 }
 .fonction__icon {
   font-size: 1.3em;
@@ -270,6 +287,15 @@ button:hover {
   font-weight: bold;
 }
 
+.menu__title {
+  position: relative;
+}
+.menu__title h2 {
+  margin-right: auto;
+  font-family: "Shrikhand", sans-serif;
+  font-size: 30px;
+}
+
 .heart {
   color: black;
   font-size: 2em;
@@ -277,6 +303,7 @@ button:hover {
 
 .empty {
   margin-right: 10px;
+  margin-left: 10px;
   transition: all 2000ms;
   z-index: 1;
   opacity: 1;
@@ -297,6 +324,10 @@ button:hover {
   background-image: linear-gradient(130deg, var(--primary_color), var(--secondary_color));
   opacity: 0;
   transition: all 2000ms;
+}
+
+#fill_menu {
+  right: 10px;
 }
 
 /* MENUS RESTAURANTS*/
@@ -374,7 +405,7 @@ button:hover {
   gap: 25px;
   margin-bottom: 40px;
 }
-.menu__cont h2 {
+.menu__cont h3 {
   border-bottom: 4px solid;
   border-color: var(--tertiary_color);
   padding-bottom: 5px;
@@ -509,5 +540,8 @@ button:hover {
   }
   .menu__box {
     width: 30%;
+  }
+  .empty {
+    margin-left: 40px;
   }
 }/*# sourceMappingURL=style.css.map */

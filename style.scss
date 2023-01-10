@@ -17,12 +17,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     opacity: 1;
+    z-index: 3;
+    pointer-events: none;
+    
 }
 .loader {
     width: 100px;
@@ -78,17 +81,30 @@
         font-size: 35px;
     }
     h2{
-        font-size: 24px;
+        /*font-size: 24px;*/
+        
+        font-size: 26px;
     }
     h3{
+        font-size: 24px;
+    }
+    h4{
+        font-size: 17px;
+        font-weight: bold;
+    }
+    p{
         font-size: 17px;
     }
+}
+
+.bold{
+    font-weight: bold;
 }
 
 header {
     text-align: center;
     padding: 10px;
-    font-family: 'Shrikhand';
+    font-family: 'Shrikhand', sans-serif;
     }
 
 .footer{
@@ -120,6 +136,7 @@ header {
         margin-right: 15px;
     }
 }
+
 
  /* MENU PRINCIPAL / CHOIX DU RESTAURANT */
 
@@ -161,6 +178,7 @@ button{
     opacity: 1;
     &:hover{
         opacity: 0.9;
+        box-shadow: 5px 5px 15px rgb(46, 46, 46);
     }
 }
 
@@ -176,8 +194,10 @@ button{
         border-radius: 20px;
         background-color: rgb(249, 246, 246);
         box-shadow: 5px 5px 30px grey;
-        h3{
+        p{
             margin-left: 30px;
+            font-size: 17px;
+            font-weight: bold;
         }
     }
     &__icon{
@@ -260,6 +280,14 @@ button{
     font-weight: bold;
 }
 
+.menu__title{
+    position: relative;
+    h2{
+        margin-right: auto;
+        font-family: 'Shrikhand', sans-serif;
+        font-size: 30px;
+    }
+}
 .heart{
     color: black;
     font-size: 2em;
@@ -267,6 +295,7 @@ button{
 
 .empty{
     margin-right: 10px;
+    margin-left: 10px;
     transition: all 2000ms;
     z-index: 1;
     opacity: 1;
@@ -290,6 +319,9 @@ button{
     transition: all 2000ms;
 }
 
+#fill_menu{
+    right: 10px;
+}
 
 /* MENUS RESTAURANTS*/
 
@@ -355,7 +387,7 @@ button{
         flex-direction: column;
         gap: 25px;
         margin-bottom: 40px;
-        h2{
+        h3{
             border-bottom: 4px solid;
             border-color: var(--tertiary_color);
             padding-bottom: 5px;
@@ -495,5 +527,9 @@ button{
     .menu__box{
         width: 30%;
     }
+
+    .empty{
+        margin-left: 40px;
+        }
 
 }
