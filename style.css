@@ -22,6 +22,8 @@
   opacity: 1;
   z-index: 3;
   pointer-events: none;
+  -webkit-animation: loading 3000ms forwards;
+          animation: loading 3000ms forwards;
 }
 
 .loader {
@@ -55,21 +57,65 @@
   border-radius: 20px;
 }
 
-@-webkit-keyframes bars {
+@-webkit-keyframes site_opacity {
   0% {
-    transform: translateX(50%);
+    opacity: 0.2;
+  }
+  75% {
+    opacity: 0.2;
   }
   100% {
-    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-@keyframes bars {
+@keyframes site_opacity {
   0% {
-    transform: translateX(50%);
+    opacity: 0.2;
+  }
+  75% {
+    opacity: 0.2;
   }
   100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes bars {
+  from {
+    transform: translateX(50%);
+  }
+  to {
     transform: translateX(0);
+  }
+}
+@keyframes bars {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
   }
 }
 /* ATTRIBUTS COMMUNS */
@@ -86,12 +132,13 @@
   font-family: "Raleway", sans-serif;
   margin-left: auto;
   margin-right: auto;
+  -webkit-animation: site_opacity 3000ms forwards;
+          animation: site_opacity 3000ms forwards;
 }
 .site_entier h1 {
   font-size: 35px;
 }
 .site_entier h2 {
-  /*font-size: 24px;*/
   font-size: 26px;
 }
 .site_entier h3 {
@@ -351,7 +398,6 @@ button:hover {
 .photo__box {
   height: 300px;
   width: 100%;
-  z-index: 1;
 }
 
 .photo__menu {
@@ -385,9 +431,9 @@ button:hover {
   }
 }
 .menu {
+  margin-top: -30px;
   padding: 20px;
   border-radius: 50px 50px 0px 0px;
-  z-index: 2;
 }
 .menu__title {
   display: flex;

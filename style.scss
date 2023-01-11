@@ -25,7 +25,7 @@
     opacity: 1;
     z-index: 3;
     pointer-events: none;
-    
+    animation: loading 3000ms forwards;
 }
 .loader {
     width: 100px;
@@ -53,12 +53,37 @@
     }
 }
 
+@keyframes site_opacity {
+
+    0%{
+        opacity: 0.2;
+    }
+    75%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 @keyframes bars {
-    0% {
+    from{
         transform: translateX(50%);
     }
-    100% {
+    to {
         transform: translateX(0);
+    }
+}
+
+@keyframes loading {
+    0%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 0;
     }
 }
 
@@ -77,12 +102,11 @@
     font-family: 'Raleway', sans-serif;
     margin-left: auto;
     margin-right: auto;
+    animation: site_opacity 3000ms forwards;
     h1{
         font-size: 35px;
     }
     h2{
-        /*font-size: 24px;*/
-        
         font-size: 26px;
     }
     h3{
@@ -346,15 +370,13 @@ button{
 .photo__box{
     height: 300px;
     width: 100%;
-    z-index: 1;
-
 }
+
 .photo__menu{
     height: 100%;
     width: 100%;
     object-fit:cover;
     object-position: center;
-   
 }
 
 @keyframes menu__translate{
@@ -369,9 +391,9 @@ button{
 }
 
 .menu{
+    margin-top: -30px;
     padding: 20px;
     border-radius: 50px 50px 0px 0px;
-    z-index: 2;
     &__title{
         display: flex;
         justify-content: flex-end;
