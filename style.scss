@@ -2,21 +2,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 
-:root {
-    --primary_color: #9356DC;
-    --secondary_color: #FF79DA;
-    --tertiary_color: #99E2D0;
-    --booki_radius: 20px;
-    --shadow_hover: 5px 5px 30px rgb(88, 83, 83);
-    --bg_color: white;
+$primary_color: #9356DC;
+$secondary_color: #FF79DA;
+$tertiary_color: #99E2D0;
+$bg_color: rgb(255, 255, 255);
+$footer_color: rgb(72, 70, 70);
+$shadow_color: rgb(91, 82, 114);
+
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+}
+
+@mixin box-shadow{
+    box-shadow: 5px 5px 15px $shadow_color;
+    &:hover{
+        box-shadow: 5px 5px 20px darken($shadow_color, 30%);
+    }
 }
 
     /* LOGO CHARGEMENT */
-
+/*
 .loader__cont{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -38,7 +47,7 @@
         height: 6px;
         animation: bars 1000ms infinite;
         animation-direction: alternate;
-        background-color: var(--primary_color);
+        background-color: $primary_color;
         animation-delay: 300ms;
         border-radius: 20px;
     }
@@ -47,7 +56,7 @@
         height: 9px;
         animation: bars 1000ms infinite;
         animation-direction: alternate-reverse;
-        background-color: var(--secondary_color);
+        background-color: $secondary_color;
         animation-delay: 300ms;
         border-radius: 20px;
     }
@@ -86,7 +95,7 @@
         opacity: 0;
     }
 }
-
+*/
 /* ATTRIBUTS COMMUNS */
 
 * {
@@ -98,7 +107,7 @@
 .site_entier {
     height: 100vh;
     max-width: 1440px;
-    background-color: var(--bg_color);
+    background-color: $bg_color;
     font-family: 'Raleway', sans-serif;
     margin-left: auto;
     margin-right: auto;
@@ -132,8 +141,8 @@ header {
     }
 
 .footer{
-    background-color: rgb(72, 70, 70);
-    color: white;
+    background-color: $footer_color;
+    color: $bg_color;
     height: 205px;
     line-height: 30px;
     h3{
@@ -146,12 +155,12 @@ header {
         margin-left: 30px;
         a{
             text-decoration: none;
-            color: white;
+            color: $bg_color;
         }
     }
     &__box{
-        display: flex;
-        align-items: center;
+        @include flex-center;
+        justify-content: flex-start;
     }
     &__icon1{
         margin-right: 21px;
@@ -165,11 +174,9 @@ header {
  /* MENU PRINCIPAL / CHOIX DU RESTAURANT */
 
 .nav {
-    display: flex;
+    @include flex-center;
     padding: 20px 0px;
     background-color: rgb(225, 223, 223);
-    align-content:center;
-    justify-content: center;
     gap: 15px;
 }
 
@@ -195,14 +202,13 @@ button{
     border-radius: 30px;
     border: none;
     text-align: center;
-    color: white;
+    color: $bg_color;
     font-weight: bold;
-    background: linear-gradient(330deg, var(--primary_color), var(--secondary_color));
-    box-shadow: 5px 5px 10px rgb(128, 128, 128);
+    background: linear-gradient(330deg, $primary_color, $secondary_color);
+    @include box-shadow;
     opacity: 1;
     &:hover{
         opacity: 0.9;
-        box-shadow: 5px 5px 15px rgb(46, 46, 46);
     }
 }
 
@@ -210,20 +216,21 @@ button{
     margin: 40px 0px;
     padding: 0px 30px;
     &__box{
-        display: flex;
-        align-items: center;
+        @include flex-center;
+        justify-content: flex-start;
         width: 100%;
         padding: 25px;
         margin-top: 30px;
         border-radius: 20px;
         background-color: rgb(249, 246, 246);
-        box-shadow: 5px 5px 30px grey;
+        box-shadow: 5px 5px 20px grey;
         p{
             margin-left: 30px;
             font-size: 17px;
             font-weight: bold;
         }
     }
+
     &__icon{
         font-size: 1.3em;
         padding-left: 20px;
@@ -231,15 +238,15 @@ button{
     }
     &__icon__purple{
         font-size: 1.3em;
-        color: var(--primary_color);
+        color: $primary_color;
         padding-left: 20px;
         margin-left: 10px;
     }
 }
 
 .chiffre{
-    background-color: var(--primary_color);
-    color: white;
+    background-color: $primary_color;
+    color: $bg_color;
     border: 1px solid grey;
     padding: 2px 11px 6px 11px;
     border-radius: 50%;
@@ -262,23 +269,20 @@ button{
         padding-top: 40px;
     }
     &__text{
-        display: flex;
+        @include flex-center;
         justify-content: space-between;
-        align-items: center;
         padding: 0px 20px;
     }
     &__box{ 
+        @include box-shadow;
+        position: relative;
         width: 100%;
         height: 280px;
         border-radius: 20px;
-        background-color: rgb(249, 246, 246);
-        box-shadow: 5px 5px 30px grey;
+        background-color: $bg_color;
         line-height: 27px;
         margin: 30px 0px 40px 0px;
-        position: relative;
-        &:hover{
-            box-shadow: 5px 5px 30px black;
-        }
+        
         a{
             text-decoration: none;
             list-style-type: none;
@@ -294,17 +298,14 @@ button{
 }
 
 .nouveau{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     height: 40px;
     width: 120px;
-    background-color: rgb(175, 235, 213);
+    background-color: $tertiary_color;
     color:  rgb(27, 144, 122);
     position: absolute;
     right: 20px;
     top: 20px;
-    font-weight: bold;
 }
 
 .menu__title{
@@ -340,8 +341,7 @@ button{
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    background-image: linear-gradient(130deg,
-    var(--primary_color),var(--secondary_color));
+    background-image: linear-gradient(130deg, $primary_color, $secondary_color);
     opacity: 0;
     transition: all 2000ms;
 }
@@ -350,8 +350,8 @@ button{
 
 
 .header__cont{
-    display: flex;
-    align-items: center;
+    @include flex-center;
+    justify-content: flex-start;
     h1{
         margin: auto;
     }
@@ -361,7 +361,7 @@ button{
     }
 }
 
-#fleche{
+.fleche{
     margin-left: 15px;
     font-size: 1.5em;
 }
@@ -390,16 +390,15 @@ button{
     }
 }
 
+
 .menu{
     border-radius: 50px 50px 0px 0px;
-    
     &__title{
-        display: flex;
+        @include flex-center;
         justify-content: flex-end;
         max-width: 1440px;
-        align-items: center;
         padding: 30px 20px;
-        background-color: var(--bg_color);
+        background-color: $bg_color;
         border-radius: 30px 30px 0px 0px;
         h1{
             font-family: 'Shrikhand';
@@ -413,33 +412,28 @@ button{
         padding: 0px 30px;
         h3{
             border-bottom: 4px solid;
-            border-color: var(--tertiary_color);
+            border-color: $tertiary_color;
             padding-bottom: 5px;
             width: 60px;
         }
     }
     &__total__box{
-        display: flex;
+        @include flex-center;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         gap: 25px;
         animation: menu__translate;
         animation-duration: 1.5s;
     } 
     &__box{
-        display: flex;
-        align-items: center;
+        @include flex-center;
+        @include box-shadow;
+        justify-content: flex-start;
         width: 100%;
         height: 80px;
-        box-shadow: 5px 5px 20px grey;
         border-radius: 25px;
         line-height: 25px;
         overflow: hidden;
         transform: rotate(360deg);
-        &:hover{
-            box-shadow: 5px 5px 20px black;
-        }
         &:hover .menu__carre{
             margin-right: 0px;
             min-width: 100px;
@@ -454,7 +448,7 @@ button{
         padding-right: 20px;
         white-space: nowrap;
         overflow: hidden;
-        p, h3{
+        p, h4{
             text-overflow: ellipsis;
             overflow: hidden;
         }
@@ -464,16 +458,13 @@ button{
         margin-top: 25px;
         padding-right: 45px;
         padding-left: 10px;
-        font-weight: bold;
     }
     &__carre{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-center;
         transition: all 500ms;
         min-width: 0px;
         height: 100%;
-        background-color: var(--tertiary_color);
+        background-color: $tertiary_color;
         border-radius: 0px 25px 25px 0px;
         margin-right: -30px;
     }
@@ -495,9 +486,9 @@ button{
 .check__icon{
     padding: 5px;
     border-radius: 50%;
-    color: var(--tertiary_color);
+    color: $tertiary_color;
     font-size: 1.2em;
-    background-color: white;
+    background-color: $bg_color;
 }
 
 .commander{
@@ -521,10 +512,6 @@ button{
     }
     
     .restau{
-        background-color: rgb(249, 246, 246);
-        margin-top: 50px;
-        width: 100%;
-        padding: 0px 10px 30px 10px;
         h2{
             margin-bottom: 10px;
         }
