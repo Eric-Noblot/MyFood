@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 
-$primary_color: red;
+$primary_color: #9356DC;
 $secondary_color: #FF79DA;
 $tertiary_color: #99E2D0;
 $bg_color: rgb(255, 255, 255);
@@ -213,6 +213,7 @@ button{
     opacity: 1;
     &:hover{
         opacity: 0.9;
+        cursor: pointer;
     }
 }
 
