@@ -1,79 +1,114 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 /* LOGO CHARGEMENT */
-/*
-.loader__cont{
-    @include flex-center;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 1;
-    z-index: 3;
-    pointer-events: none;
-    animation: loading 3000ms forwards;
+.loader__cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  z-index: 3;
+  pointer-events: none;
+  -webkit-animation: loading 3000ms forwards;
+          animation: loading 3000ms forwards;
 }
+
 .loader {
-    width: 100px;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    &__bar:nth-child(odd) {
-        width: 100%;
-        height: 6px;
-        animation: bars 1000ms infinite;
-        animation-direction: alternate;
-        background-color: $primary_color;
-        animation-delay: 300ms;
-        border-radius: 20px;
-    }
-    &__bar:nth-child(even) {
-        width: 100%;
-        height: 9px;
-        animation: bars 1000ms infinite;
-        animation-direction: alternate-reverse;
-        background-color: $secondary_color;
-        animation-delay: 300ms;
-        border-radius: 20px;
-    }
+  width: 100px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.loader__bar:nth-child(odd) {
+  width: 100%;
+  height: 6px;
+  -webkit-animation: bars 1000ms infinite;
+          animation: bars 1000ms infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  background-color: red;
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+  border-radius: 20px;
+}
+.loader__bar:nth-child(even) {
+  width: 100%;
+  height: 9px;
+  -webkit-animation: bars 1000ms infinite;
+          animation: bars 1000ms infinite;
+  animation-direction: alternate-reverse;
+  background-color: #FF79DA;
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+  border-radius: 20px;
+}
+
+@-webkit-keyframes site_opacity {
+  0% {
+    opacity: 0.2;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes site_opacity {
-
-    0%{
-        opacity: 0.2;
-    }
-    75%{
-        opacity: 0.2;
-    }
-    100%{
-        opacity: 1;
-    }
+  0% {
+    opacity: 0.2;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
+@-webkit-keyframes bars {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 @keyframes bars {
-    from{
-        transform: translateX(50%);
-    }
-    to {
-        transform: translateX(0);
-    }
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
-
+@-webkit-keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes loading {
-    0%{
-        opacity: 1;
-    }
-    75%{
-        opacity: 0.8;
-    }
-    100%{
-        opacity: 0;
-    }
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-*/
 /* ATTRIBUTS COMMUNS */
 * {
   box-sizing: border-box;
@@ -88,8 +123,6 @@
   font-family: "Raleway", sans-serif;
   margin-left: auto;
   margin-right: auto;
-  -webkit-animation: site_opacity 3000ms forwards;
-          animation: site_opacity 3000ms forwards;
 }
 .site_entier h1 {
   font-size: 35px;
@@ -106,6 +139,11 @@
 }
 .site_entier p {
   font-size: 16px;
+}
+
+.animation {
+  -webkit-animation: site_opacity 3000ms forwards;
+          animation: site_opacity 3000ms forwards;
 }
 
 .bold {
@@ -184,7 +222,7 @@ button {
   text-align: center;
   color: rgb(255, 255, 255);
   font-weight: bold;
-  background: linear-gradient(330deg, #9356DC, #FF79DA);
+  background: linear-gradient(330deg, red, #FF79DA);
   box-shadow: 5px 5px 15px rgb(91, 82, 114);
   opacity: 1;
 }
@@ -223,13 +261,13 @@ button:hover {
 }
 .fonction__icon__purple {
   font-size: 1.3em;
-  color: #9356DC;
+  color: red;
   padding-left: 20px;
   margin-left: 10px;
 }
 
 .chiffre {
-  background-color: #9356DC;
+  background-color: red;
   color: rgb(255, 255, 255);
   border: 1px solid grey;
   padding: 2px 11px 6px 11px;
@@ -333,7 +371,7 @@ button:hover {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  background-image: linear-gradient(130deg, #9356DC, #FF79DA);
+  background-image: linear-gradient(130deg, red, #FF79DA);
   opacity: 0;
   transition: all 2000ms;
 }

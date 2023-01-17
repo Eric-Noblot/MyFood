@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 
-$primary_color: #9356DC;
+$primary_color: red;
 $secondary_color: #FF79DA;
 $tertiary_color: #99E2D0;
 $bg_color: rgb(255, 255, 255);
@@ -23,7 +23,7 @@ $shadow_color: rgb(91, 82, 114);
 }
 
     /* LOGO CHARGEMENT */
-/*
+
 .loader__cont{
     @include flex-center;
     position: fixed;
@@ -95,7 +95,7 @@ $shadow_color: rgb(91, 82, 114);
         opacity: 0;
     }
 }
-*/
+
 /* ATTRIBUTS COMMUNS */
 
 * {
@@ -111,7 +111,7 @@ $shadow_color: rgb(91, 82, 114);
     font-family: 'Raleway', sans-serif;
     margin-left: auto;
     margin-right: auto;
-    animation: site_opacity 3000ms forwards;
+   
     h1{
         font-size: 35px;
     }
@@ -128,6 +128,10 @@ $shadow_color: rgb(91, 82, 114);
     p{
         font-size: 16px;
     }
+}
+
+.animation{
+    animation: site_opacity 3000ms forwards;
 }
 
 .bold{
