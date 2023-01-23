@@ -350,6 +350,7 @@ button:hover {
 .heart {
   color: black;
   font-size: 2em;
+  cursor: pointer;
 }
 
 .empty {
