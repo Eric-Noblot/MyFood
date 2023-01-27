@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+/* VARIABLES ET MIX IN */
 /* LOGO CHARGEMENT */
 .loader__cont {
   display: flex;
@@ -371,8 +370,8 @@ button:hover {
   position: absolute;
   right: 30px;
   color: transparent;
-  background-clip: text;
   -webkit-background-clip: text;
+          background-clip: text;
   background-image: linear-gradient(130deg, #9356DC, #FF79DA);
   opacity: 0;
   transition: all 2000ms;
@@ -485,7 +484,6 @@ button:hover {
   border-radius: 25px;
   line-height: 25px;
   overflow: hidden;
-  transform: rotate(360deg);
 }
 .menu__box:hover {
   box-shadow: 5px 5px 20px #141219;
